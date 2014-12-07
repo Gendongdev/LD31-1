@@ -8,10 +8,6 @@ public class ThePrize : WorldObject  {
 	void Start () 
     {
         _GameManager = GameObject.Find("Managers").GetComponent<GameManager>();
-        //instance = GameObject.FindGameObjectWithTag("ThePrize").GetComponent<ThePrize>();
-        
-
-        //instance = GameObject.FindObjectOfType(typeof(ThePrize)) as ThePrize;	
 	}
 	
 	

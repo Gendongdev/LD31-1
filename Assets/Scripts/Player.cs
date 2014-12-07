@@ -7,13 +7,15 @@ public class Player : MonoBehaviour
     public float Speed { get; set; }
     public Rigidbody CharacterRigidBody;
 
+    public GameObject Projectile;
+    public Quaternion rotation;
     public enum CharacterAnimState {idle, movingLeft, movingRight }
     public CharacterAnimState CurrentAnimState;
     public Animator anim;
 
 
     private Vector3 destination;
-
+    private Vector3 castPoint;
 
 
     void Awake ()
@@ -28,7 +30,7 @@ public class Player : MonoBehaviour
         InputManager.Instance.OnRMBClick += OnRMBClick;
 
         anim = gameObject.GetComponentInChildren<Animator>();
-
+        Projectile = (GameObject)Resources.Load("Projectile");
         destination = transform.position;
         Speed = 0.05f;
         CharacterRigidBody = gameObject.transform.GetComponentInChildren<Rigidbody>();
@@ -51,6 +53,8 @@ public class Player : MonoBehaviour
 
     private void OnLMBClick(Vector3 LclickPoint)
     {
+        castPoint = LclickPoint;
+        CastAtPoint(castPoint);
                       
     }
 
@@ -75,6 +79,24 @@ public class Player : MonoBehaviour
     void Idle()
     {
         CurrentAnimState = CharacterAnimState.idle;
+    }
+
+    void CastAtPoint(Vector3 v3)
+    {
+
+        float xDif = v3.x - transform.position.x;
+        float zDif = v3.z - transform.position.z;
+
+        if (zDif < 0)
+            rotation.eulerAngles = new Vector3(0, ((Mathf.Atan(xDif / zDif)) * Mathf.Rad2Deg) - 180, 0);
+        else
+            rotation.eulerAngles = new Vector3(0, (Mathf.Atan(xDif / zDif)) * Mathf.Rad2Deg, 0);
+        
+        
+        
+        //rotation.eulerAngles = new Vector3(0, (Mathf.Atan(xDif / zDif)) * Mathf.Rad2Deg, 0);
+        Vector3 offset = new Vector3(0,0.5f,0);
+        Instantiate(Projectile, transform.position + offset, rotation);
     }
 
     void MoveTo(Vector3 v3)

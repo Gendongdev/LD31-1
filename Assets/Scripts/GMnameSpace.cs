@@ -7,7 +7,6 @@ namespace GMnameSpace
     {
         public int CheckPointNum { get; set; }
         public Vector3 PlayerPosition { get; set; }
-        public Vector3 PrizePosition { get; set; }
 
         public CheckPoint()
         {
