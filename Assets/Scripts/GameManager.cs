@@ -11,28 +11,35 @@ public class GameManager : MonoBehaviour
     public GameObject PlayerPrefab { get; set; }
     public CheckPoint CurrentCheckPoint = new CheckPoint();
     public GUIStyle MainGUIStyle;
-
     public List<Vector3> PrizePositions = new List<Vector3> ();
-
+    public Transform Levels;
     public bool GameComplete { get; set; }
-
-
+    
     public static GameManager GM;
 
     #region Awake,Start and Update
     void Awake ()
     {
         fillPrizePositionList();
-        //ThePrize.Instance.PrizeGot += PrizeGot;
         CurrentCheckPoint.nextCheckPoint();
         Player = GameObject.FindGameObjectWithTag("Player");
         GameComplete = false;
+        Levels = GameObject.Find("Levels").transform;
+               
+
+        for (int i = 0; i < Levels.childCount; i++)
+            Levels.GetChild(i).gameObject.SetActive(false);
+
+        Levels.GetChild(0).gameObject.SetActive(true);           
+
     }
 
     void Start()
     {
         PlayerPrefab = (GameObject)Resources.Load("Player");
         ThePrizePrefab = (GameObject)Resources.Load("ThePrize");
+
+        
     }
 
     void Update()
@@ -52,10 +59,12 @@ public class GameManager : MonoBehaviour
     {
 
         CurrentCheckPoint.nextCheckPoint();
-        if ((CurrentCheckPoint.CheckPointNum-1) < PrizePositions.Count)
+        if ((CurrentCheckPoint.CheckPointNum) < Levels.childCount)
         {
-            CurrentCheckPoint.PrizePosition = PrizePositions[CurrentCheckPoint.CheckPointNum - 1];
+            CurrentCheckPoint.PrizePosition = PrizePositions[CurrentCheckPoint.CheckPointNum];
             Instantiate(ThePrizePrefab, CurrentCheckPoint.PrizePosition, Quaternion.identity);
+            Levels.GetChild(CurrentCheckPoint.CheckPointNum - 1).gameObject.SetActive(false);
+            Levels.GetChild(CurrentCheckPoint.CheckPointNum).gameObject.SetActive(true);    
         }
         else
             GameComplete = true;
@@ -76,5 +85,10 @@ public class GameManager : MonoBehaviour
         PrizePositions.Add(new Vector3(4.0f, 0.0f, -2.2f));
         PrizePositions.Add(new Vector3(-4.5f, 0.0f, 5.7f));
         PrizePositions.Add(new Vector3(4.0f, 0.0f, -2.2f));
+        PrizePositions.Add(new Vector3(-4.5f, 0.0f, 5.7f));
+        PrizePositions.Add(new Vector3(4.0f, 0.0f, -2.2f));
+        PrizePositions.Add(new Vector3(-4.5f, 0.0f, 5.7f));
+        PrizePositions.Add(new Vector3(4.0f, 0.0f, -2.2f));
+        PrizePositions.Add(new Vector3(-4.5f, 0.0f, 5.7f));
     }
 }

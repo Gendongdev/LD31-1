@@ -11,18 +11,12 @@ namespace GMnameSpace
 
         public CheckPoint()
         {
-            CheckPointNum = 0;
+            CheckPointNum = -1;
         }
         public void nextCheckPoint()
         {
             PlayerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
             CheckPointNum++;
         }
-    }
-
-
-    
-
-
-
+    } 
 }
