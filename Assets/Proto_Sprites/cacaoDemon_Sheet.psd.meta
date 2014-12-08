@@ -1,0 +1,146 @@
+fileFormatVersion: 2
+guid: 033cad7a80223b645bcf6353f00af535
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: cacaoDemon_Sheet_0
+    21300002: cacaoDemon_Sheet_1
+    21300004: cacaoDemon_Sheet_2
+    21300006: cacaoDemon_Sheet_3
+    21300008: cacaoDemon_Sheet_4
+    21300010: cacaoDemon_Sheet_5
+    21300012: cacaoDemon_Sheet_6
+    21300014: cacaoDemon_Sheet_7
+    21300016: cacaoDemon_Sheet_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: cacaoDemon_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 408
+        width: 93
+        height: 25
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 7}
+    - name: cacaoDemon_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 386
+        width: 105
+        height: 18
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cacaoDemon_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 340
+        width: 106
+        height: 43
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cacaoDemon_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 238
+        width: 111
+        height: 94
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cacaoDemon_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 268
+        width: 146
+        height: 154
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cacaoDemon_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 249
+        width: 126
+        height: 222
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cacaoDemon_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 10
+        width: 124
+        height: 221
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cacaoDemon_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 13
+        width: 135
+        height: 224
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cacaoDemon_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 3
+        width: 131
+        height: 236
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
