@@ -12,14 +12,18 @@ public class GameManager : MonoBehaviour
     public CheckPoint CurrentCheckPoint = new CheckPoint();
     public GUIStyle MainGUIStyle;
     public Transform Levels;
+    public Player PlayerScript;
     public bool GameComplete { get; set; }
     
 
     #region Awake,Start and Update
     void Awake ()
     {
+
+        Physics.IgnoreLayerCollision(8, 9);
         CurrentCheckPoint.nextCheckPoint();
         Player = GameObject.FindGameObjectWithTag("Player");
+        PlayerScript = Player.GetComponent<Player>();
         GameComplete = false;
         Levels = GameObject.Find("Levels").transform;
         
@@ -41,7 +45,18 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(PlayerPrefab, CurrentCheckPoint.PlayerPosition, Quaternion.identity);
             Player = GameObject.FindGameObjectWithTag("Player");
-        }    
+            PlayerScript = Player.GetComponent<Player>();
+
+        }
+
+
+        if (CurrentCheckPoint.CheckPointNum >= 2)
+            PlayerScript.CanThrowMagic = true;
+
+
+
+
+
     }
     #endregion
 

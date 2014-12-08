@@ -46,7 +46,10 @@ public class InputManager : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 100))
+        int layerMask = 1 << 9;
+        layerMask = ~layerMask;
+
+        if (Physics.Raycast(ray, out hit, 100,layerMask))
         {
             if (Input.GetMouseButtonUp(0))
                 OnLMBClick(hit.point);
@@ -54,6 +57,9 @@ public class InputManager : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
                 OnRMBClick(hit.point);
         }
+
+        if (Input.GetKeyDown("r"))
+            Application.LoadLevel(0);
 	
 	}
 }

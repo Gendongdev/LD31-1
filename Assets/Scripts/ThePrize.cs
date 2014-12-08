@@ -16,7 +16,7 @@ public class ThePrize : WorldObject  {
 	
 	}
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {

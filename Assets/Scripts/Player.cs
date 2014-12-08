@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public enum CharacterAnimState {idle, movingLeft, movingRight }
     public CharacterAnimState CurrentAnimState;
     public Animator anim;
-
+    public bool CanThrowMagic;
 
     private Vector3 destination;
     private Vector3 castPoint;
@@ -53,10 +53,13 @@ public class Player : MonoBehaviour
 
     private void OnLMBClick(Vector3 LclickPoint)
     {
-        castPoint = LclickPoint;
-        CastAtPoint(castPoint);
-                      
-    }
+        if (CanThrowMagic)
+        {
+            castPoint = LclickPoint;
+            CastAtPoint(castPoint);        
+        }
+    }                     
+    
 
     private void OnRMBClick(Vector3 RclickPoint)
     {
